@@ -2,6 +2,7 @@
 
 require('../vendor/autoload.php');
 
+
 $app = new Silex\Application();
 $app['debug'] = true;
 
@@ -20,6 +21,12 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   return $app['twig']->render('index.twig');
+});
+
+//modified by the heroku help for using locally
+$app->get('/cowsay', function() use($app) {
+  $app['monolog']->addDebug('cowsay');
+  return "<pre>".\Cowsayphp\Cow::say("Cool beans")."</pre>";
 });
 
 $app->run();
