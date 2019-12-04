@@ -3,7 +3,8 @@
     "silex/silex": "^2.0.4",
     "monolog/monolog": "^1.22",
     "twig/twig": "^2.0",
-    "symfony/twig-bridge": "^3",
+    "symfony/mime": "4.3.8",
+    "symfony/http-foundation": "4.3.8",
     "alrik11es/cowsayphp": "^1.2"
   },
   "require-dev": {
